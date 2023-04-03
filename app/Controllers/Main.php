@@ -120,7 +120,7 @@ class Main extends BaseController
     }
     
     public function mhs(){
-        $this->data['page_title'] = "List of Contacts";
+        $this->data['page_title'] = "List of Mahasiswa";
         $this->data['list'] = $this->mhs_model->orderBy('date(date_created) ASC')->select('*')->get()->getResult();
         echo view('templates/mhs_header', $this->data);
         echo view('mahasiswa/list', $this->data);
@@ -128,10 +128,80 @@ class Main extends BaseController
     }
 
     public function mhs_create(){
-        $this->data['page_title'] = "Add New";
+        $this->data['page_title'] = "Add New Mahasiswa";
         $this->data['request'] = $this->request;
         echo view('templates/mhs_header', $this->data);
-        echo view('crud/create', $this->data);
+        echo view('mahasiswa/create', $this->data);
+        echo view('templates/footer');
+    }
+
+    public function mhs_save(){
+        $this->data['request'] = $this->request;
+        $post = [
+            'firstname' => $this->request->getPost('nim'),
+            'middlename' => $this->request->getPost('nama'),
+            'lastname' => $this->request->getPost('jk'),
+            'gender' => $this->request->getPost('tempat_lahir'),
+            'contact' => $this->request->getPost('tanggal_lahir'),
+            'email' => $this->request->getPost('alamat'),
+            'address' => $this->request->getPost('no_telp')
+        ];
+        if(!empty($this->request->getPost('id')))
+            $save = $this->mhs_model->where(['id'=>$this->request->getPost('id')])->set($post)->update();
+        else
+            $save = $this->mhs_model->insert($post);
+        if($save){
+            if(!empty($this->request->getPost('id')))
+            $this->session->setFlashdata('success_message','Data has been updated successfully') ;
+            else
+            $this->session->setFlashdata('success_message','Data has been added successfully') ;
+            $id =!empty($this->request->getPost('id')) ? $this->request->getPost('id') : $save;
+            return redirect()->to('/main/mhs_view_details/'.$id);
+        }else{
+            echo view('templates/mhs_header', $this->data);
+            echo view('mahasiswa/create', $this->data);
+            echo view('templates/footer');
+        }
+    }
+
+    // Edit Form Page
+    public function mhs_edit($id=''){
+        if(empty($id)){
+            $this->session->setFlashdata('error_message','Unknown Data ID.') ;
+            return redirect()->to('/main/list');
+        }
+        $this->data['page_title'] = "Edit Contact Details";
+        $qry= $this->mhs_model->select('*')->where(['id'=>$id]);
+        $this->data['data'] = $qry->first();
+        echo view('templates/mhs_header', $this->data);
+        echo view('mahasiswa/edit', $this->data);
+        echo view('templates/footer');
+    }
+
+    // Delete Data
+    public function mhs_delete($id=''){
+        if(empty($id)){
+            $this->session->setFlashdata('error_message','Unknown Data ID.') ;
+            return redirect()->to('/main/mhs');
+        }
+        $delete = $this->mhs_model->delete($id);
+        if($delete){
+            $this->session->setFlashdata('success_message','Contact Details has been deleted successfully.') ;
+            return redirect()->to('/main/mhs');
+        }
+    }
+
+    // View Data
+    public function mhs_view_details($id=''){
+        if(empty($id)){
+            $this->session->setFlashdata('error_message','Unknown Data ID.') ;
+            return redirect()->to('/main/mhs');
+        }
+        $this->data['page_title'] = "View Contact Details";
+        $qry= $this->mhs_model->select("*, CONCAT(lastname,', ',firstname,COALESCE(concat(' ', middlename), '')) as `name`")->where(['id'=>$id]);
+        $this->data['data'] = $qry->first();
+        echo view('templates/mhs_header', $this->data);
+        echo view('mahasiswa/view', $this->data);
         echo view('templates/footer');
     }
 }

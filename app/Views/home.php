@@ -19,29 +19,6 @@
 </head>
 <body>
     <!-- Top Navigation Bar -->
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark bg-gradient">
-        <div class="container">
-            <a class="navbar-brand" href="<?= base_url() ?>">CI4 Simple CRUD</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?= base_url() ?>">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('main/create') ?>"><i class="fa fa-plus-square"></i> Add New</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('main/list') ?>"><i class="fa fa-th-list"></i> List</a>
-                    </li>
-                </ul>
-            </div>
-            <a href="https://sourcecodester.com" target="_blank" class="text-light fw-bold text-decoration-none">SourceCodester</a>
-
-        </div>
-    </nav>
     <div class="p-4 d-flex justify-content-center">
         <a href="<?= base_url("main/list");?>" class="card py-5 m-3 w-25 text-dark text-center">Contact List</a>
         <a href="<?= base_url("main/mhs");?>" class="card py-5 m-3 w-25 text-dark text-center">Mahasiswa List</a>
