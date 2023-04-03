@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\CrudModel;
+use App\Models\MahasiswaModel;
 
 class Main extends BaseController
 {
@@ -13,9 +14,12 @@ class Main extends BaseController
     // Model
     protected $crud_model;
 
+    protected $mhs_model;
+
     // Initialize Objects
     public function __construct(){
         $this->crud_model = new CrudModel();
+        $this->mhs_model = new MahasiswaModel();
         $this->session= \Config\Services::session();
         $this->data['session'] = $this->session;
     }
@@ -23,9 +27,7 @@ class Main extends BaseController
     // Home Page
     public function index(){
         $this->data['page_title'] = "Home Page";
-        echo view('templates/header', $this->data);
-        echo view('crud/home', $this->data);
-        echo view('templates/footer');
+        echo view('home', $this->data);
     }
 
     // Create Form Page
@@ -117,4 +119,19 @@ class Main extends BaseController
         echo view('templates/footer');
     }
     
+    public function mhs(){
+        $this->data['page_title'] = "List of Contacts";
+        $this->data['list'] = $this->mhs_model->orderBy('date(date_created) ASC')->select('*')->get()->getResult();
+        echo view('templates/mhs_header', $this->data);
+        echo view('mahasiswa/list', $this->data);
+        echo view('templates/footer');
+    }
+
+    public function mhs_create(){
+        $this->data['page_title'] = "Add New";
+        $this->data['request'] = $this->request;
+        echo view('templates/mhs_header', $this->data);
+        echo view('crud/create', $this->data);
+        echo view('templates/footer');
+    }
 }

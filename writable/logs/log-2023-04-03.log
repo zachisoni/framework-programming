@@ -13,3 +13,107 @@ ORDER BY date(date_created) ASC', [], false)
  7 SYSTEMPATH/CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2023-04-03 14:21:24 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:21:24 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->list()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:23:26 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:23:26 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->list()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:23:51 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:23:51 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->list()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:24:06 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:24:06 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->list()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:26:07 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:26:07 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 120.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->mhs()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:26:22 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:26:22 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 120.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->mhs()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:26:36 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:26:36 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->list()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:26:38 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:26:38 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 120.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->mhs()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:26:39 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:26:39 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->list()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:26:41 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:26:41 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 120.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->mhs()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:41:06 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:41:06 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 75.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->list()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:41:22 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:41:22 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 75.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->list()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-04-03 14:41:25 --> Table 'contact_list.contact_details' doesn't exist
+CRITICAL - 2023-04-03 14:41:25 --> Call to a member function getResult() on bool
+in APPPATH\Controllers\Main.php on line 75.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Main->list()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
