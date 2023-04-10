@@ -23,6 +23,30 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="jp" class="control-label">Jenjang Pendidikan</label>
+                    <select name="jp" id="jp" class="form-select form-select-border" required>
+                        <option disabled>Pilih Jenjang</option>
+                        <?php foreach ($jenjang as $jp): ?>
+                            <option value="<?= $jp->nama?>" <?= isset($data['jp']) && $data['jp'] == $jp->nama ? 'selected' : '' ?>><?= $jp->nama;?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="status_nikah">Status Pernikahan</label>
+                    <div class="form-check">
+                        <input type="radio" name="status_pernikahan" 
+                                id="lajang" value="Lajang" 
+                                <?= isset($data['status_pernikahan']) && $data['status_pernikahan'] == 'Lajang' ? 'checked' : '' ?>>
+                        <label for="lajang">Lajang</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="status_pernikahan" 
+                                id="menikah" value="Sudah Menikah"
+                                <?= isset($data['status_pernikahan']) && $data['status_pernikahan'] == 'Sudah Menikah' ? 'checked' : '' ?>>
+                        <label for="menikah">Sudah Menikah</label>
+                    </div>
+                </div>
+                <div class="mb-3">
                     <label for="tempat_lahir" class="control-label">Tempat Lahir</label>
                     <input type="text" autofocus class="form-control form-control-border" id="tempat_lahir" name="tempat_lahir" value="<?= isset($data['tempat_lahir']) ? $data['tempat_lahir'] : '' ?>" required="required" placeholder="Tempat Lahir">
                 </div>
@@ -43,6 +67,6 @@
     </div>
     <div class="card-footer text-center">
         <button class="btn btn-primary" form="create-form" type="submit"><i class="fa fa-save"></i> Save Details</button>
-        <a class="btn btn-secondary" href="<?= base_url('main/view_details/'.(isset($data['id']) ? $data['id'] : '')) ?>"><i class="fa fa-times"></i> Cancel</a>
+        <a class="btn btn-secondary" href="<?= base_url('main/mhs_view_details/'.(isset($data['id']) ? $data['id'] : '')) ?>"><i class="fa fa-times"></i> Cancel</a>
     </div>
 </div>

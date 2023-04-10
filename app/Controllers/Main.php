@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CrudModel;
 use App\Models\MahasiswaModel;
+use App\Models\JenjangModel;
 
 class Main extends BaseController
 {
@@ -16,12 +17,18 @@ class Main extends BaseController
 
     protected $mhs_model;
 
+    protected $jenjang_model;
+
+    protected $jenjang;
+
     // Initialize Objects
     public function __construct(){
         $this->crud_model = new CrudModel();
         $this->mhs_model = new MahasiswaModel();
+        $this->jenjang_model = new JenjangModel();
         $this->session= \Config\Services::session();
         $this->data['session'] = $this->session;
+        $this->jenjang = $this->jenjang_model->orderBy('id ASC')->select('*')->get()->getResult();
     }
 
     // Home Page
@@ -130,6 +137,7 @@ class Main extends BaseController
     public function mhs_create(){
         $this->data['page_title'] = "Add New Mahasiswa";
         $this->data['request'] = $this->request;
+        $this->data['jenjang'] = $this->jenjang;
         echo view('templates/mhs_header', $this->data);
         echo view('mahasiswa/create', $this->data);
         echo view('templates/footer');
@@ -138,13 +146,15 @@ class Main extends BaseController
     public function mhs_save(){
         $this->data['request'] = $this->request;
         $post = [
-            'firstname' => $this->request->getPost('nim'),
-            'middlename' => $this->request->getPost('nama'),
-            'lastname' => $this->request->getPost('jk'),
-            'gender' => $this->request->getPost('tempat_lahir'),
-            'contact' => $this->request->getPost('tanggal_lahir'),
-            'email' => $this->request->getPost('alamat'),
-            'address' => $this->request->getPost('no_telp')
+            'nim' => $this->request->getPost('nim'),
+            'nama' => $this->request->getPost('nama'),
+            'jk' => $this->request->getPost('jk'),
+            'tempat_lahir' => $this->request->getPost('tempat_lahir'),
+            'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
+            'alamat' => $this->request->getPost('alamat'),
+            'no_telp' => $this->request->getPost('no_telp'),
+            'jp' => $this->request->getPost('jp'),
+            'status_pernikahan' => $this->request->getPost('status_pernikahan')
         ];
         if(!empty($this->request->getPost('id')))
             $save = $this->mhs_model->where(['id'=>$this->request->getPost('id')])->set($post)->update();
@@ -173,6 +183,7 @@ class Main extends BaseController
         $this->data['page_title'] = "Edit Contact Details";
         $qry= $this->mhs_model->select('*')->where(['id'=>$id]);
         $this->data['data'] = $qry->first();
+        $this->data['jenjang'] = $this->jenjang;
         echo view('templates/mhs_header', $this->data);
         echo view('mahasiswa/edit', $this->data);
         echo view('templates/footer');
@@ -198,7 +209,7 @@ class Main extends BaseController
             return redirect()->to('/main/mhs');
         }
         $this->data['page_title'] = "View Contact Details";
-        $qry= $this->mhs_model->select("*, CONCAT(lastname,', ',firstname,COALESCE(concat(' ', middlename), '')) as `name`")->where(['id'=>$id]);
+        $qry= $this->mhs_model->select("*")->where(['id'=>$id]);
         $this->data['data'] = $qry->first();
         echo view('templates/mhs_header', $this->data);
         echo view('mahasiswa/view', $this->data);

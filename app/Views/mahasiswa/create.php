@@ -23,6 +23,26 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="jp" class="control-label">Jenjang Pendidikan</label>
+                    <select name="jp" id="jp" class="form-select form-select-border" required>
+                        <option disabled>Pilih Jenjang</option>
+                        <?php foreach ($jenjang as $jp): ?>
+                            <option value="<?= $jp->nama?>"><?= $jp->nama;?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="status_pernikahan">Status Pernikahan</label>
+                    <div class="form-check">
+                        <input type="radio" name="status_pernikahan" id="lajang" value="Lajang">
+                        <label for="lajang">Lajang</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="status_pernikahan" id="menikah" value="Sudah Menikah">
+                        <label for="menikah">Sudah Menikah</label>
+                    </div>
+                </div>
+                <div class="mb-3">
                     <label for="tempat_lahir" class="control-label">Tempat Lahir</label>
                     <input type="text" autofocus class="form-control form-control-border" id="tempat_lahir" name="tempat_lahir" value="<?= !empty($request->getPost('tempat_lahir')) ? $request->getPost('tempat_lahir') : '' ?>" required="required" placeholder="Tempat Lahir">
                 </div>
