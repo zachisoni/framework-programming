@@ -215,4 +215,18 @@ class Main extends BaseController
         echo view('mahasiswa/view', $this->data);
         echo view('templates/footer');
     }
+
+    public function login(){
+        helper(['form']);
+        $this->data['page_title'] = "Login";
+        echo view('mahasiswa/login', $this->data);
+        echo view('templates/footer');
+    }
+
+    public function register(){
+        helper(['form']);
+        $this->data['page_title'] = "Register";
+        echo view('mahasiswa/register', $this->data);
+        echo view('templates/footer');
+    }
 }

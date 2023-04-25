@@ -32,8 +32,10 @@
                                 <td class="p-1 align-middle text-center">
                                     <div class="btn-group btn-group-sm">
                                         <a href="<?= base_url('main/mhs_view_details/'.$row->id) ?>" class="btn btn-default bg-gradient-light border text-dark rounded-0" title="View Contact"><i class="fa fa-eye"></i></a>
-                                        <a href="<?= base_url('main/mhs_edit/'.$row->id) ?>" class="btn btn-primary rounded-0" title="Edit Contact"><i class="fa fa-edit"></i></a>
-                                        <a href="<?= base_url('main/mhs_delete/'.$row->id) ?>" onclick="if(confirm('Are you sure to delete this contact details?') === false) event.preventDefault()" class="btn btn-danger rounded-0" title="Delete Contact"><i class="fa fa-trash"></i></a>
+                                        <?php if(session('logged_in')){?>
+                                            <a href="<?= base_url('main/mhs_edit/'.$row->id) ?>" class="btn btn-primary rounded-0" title="Edit Contact"><i class="fa fa-edit"></i></a>
+                                            <a href="<?= base_url('main/mhs_delete/'.$row->id) ?>" onclick="if(confirm('Are you sure to delete this contact details?') === false) event.preventDefault()" class="btn btn-danger rounded-0" title="Delete Contact"><i class="fa fa-trash"></i></a>
+                                        <?php }?>
                                     </div>
                                 </td>
                             </tr>

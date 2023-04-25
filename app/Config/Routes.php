@@ -40,6 +40,9 @@ $routes->get('/', 'Main::index');
 $routes->get('/main/(:any)', 'Main::$1');
 $routes->post('/main/(:any)', 'Main::$1');
 
+$routes->get('/auth/(:any)', 'Auth::$1');
+$routes->post('/auth/(:any)', 'Auth::$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
